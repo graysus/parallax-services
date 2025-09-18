@@ -1,0 +1,3 @@
+Command=/lib/user-helper-pipewire
+Target=boot
+Depend=dbus

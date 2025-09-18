@@ -1,0 +1,6 @@
+StartCommand=/lib/helper-udevdtrigger
+Command=/lib/helper-udevdtrigger hang
+
+Depend=udevd
+KillOnStop=true
+Target=boot

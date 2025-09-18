@@ -1,0 +1,3 @@
+Command=/usr/sbin/chronyd -n
+Depend=elogind;udevd
+Target=default

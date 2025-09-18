@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+CRYPTPROC=()
+
+while read -r LINE; do
+	declare -a OPTSARR
+	OPTSARR=()
+	
+	LINE="$(cut -d\# -f1 <<< "$LINE")"
+
+	if [ -z "$LINE" ]; then
+		continue
+	fi
+
+	read -r NAME DEVICE KEY OPTIONS <<< "$LINE"
+	
+	if [ x"$KEY" != x"none" ]; then
+		OPTSARR+=("--key-file=$KEY")
+	fi
+	if [ -n "$OPTIONS" ]; then
+		OLDIFS=$IFS
+		IFS=","
+		for i in $OPTIONS; do
+			OPTSARR+=("--$i")
+		done
+		IFS=$OLDIFS
+	fi
+
+	cryptsetup luksOpen "$DEVICE" "$NAME" "${OPTSARR[@]}" &
+	CRYPTPROC+=("$!")
+done < /etc/crypttab
+
+for i in "${CRYPTPROC[@]}"; do
+	wait $i
+done

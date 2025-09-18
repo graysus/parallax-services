@@ -1,0 +1,3 @@
+StartCommand=/usr/lib/helper-sysctl
+Command=hang
+Target=boot

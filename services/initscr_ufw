@@ -1,0 +1,4 @@
+StartCommand=/usr/lib/helper-ufw start
+Command=hang
+StopCommand=/usr/lib/helper-ufw stop
+Target=default

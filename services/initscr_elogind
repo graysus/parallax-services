@@ -1,0 +1,5 @@
+# Elogind
+
+Command=/usr/lib/elogind/elogind
+Depend=dbus
+Target=default

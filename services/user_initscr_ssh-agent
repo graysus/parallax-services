@@ -1,0 +1,4 @@
+StartCommand=/usr/lib/user-helper-ssh-agent start
+Command=hang
+StopCommand=/usr/lib/user-helper-ssh-agent stop
+Target=boot

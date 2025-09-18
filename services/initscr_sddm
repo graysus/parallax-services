@@ -1,0 +1,3 @@
+Command=/usr/bin/sddm
+Depend=elogind
+Target=default

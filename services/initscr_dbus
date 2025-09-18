@@ -1,0 +1,4 @@
+# Dbus daemon
+
+Command=/usr/lib/helper-dbus
+Target=boot

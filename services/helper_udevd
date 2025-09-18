@@ -1,0 +1,9 @@
+#!/bin/sh
+
+/usr/bin/udevd &
+UDEVPID=$!
+trap "kill $UDEVPID" INT
+
+udevadm control --reload
+
+wait $UDEVPID

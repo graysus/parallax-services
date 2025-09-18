@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+case $1 in
+	start)
+		source <(ssh-agent -s)
+		sendmsgu export SSH_AUTH_SOCK "$SSH_AUTH_SOCK"
+		sendmsgu export SSH_AGENT_PID "$SSH_AGENT_PID"
+		sleep 0.01
+		;;
+	stop)
+		ssh-agent -k
+		;;
+esac

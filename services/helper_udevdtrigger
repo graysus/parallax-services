@@ -1,0 +1,19 @@
+#!/bin/sh
+
+case $1 in
+	hang)
+		while true; do
+			sleep 10
+		done
+		;;
+	*)
+		udevadm trigger --attr-match=dev --action=add 
+                udevadm trigger --subsystem-match=net --action=add  
+        	udevadm trigger --type=subsystems --action=add 
+	        udevadm trigger --type=devices --action=add
+		udevadm trigger
+		
+		# giving it a sec to register may be necessary
+		sleep 0.5
+		;;
+esac

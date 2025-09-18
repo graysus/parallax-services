@@ -1,0 +1,3 @@
+StartCommand=/usr/lib/user-helper-dbus start
+Command=/usr/lib/user-helper-dbus run
+Target=boot

@@ -1,0 +1,2 @@
+Command=/usr/lib/user-helper-gpg-agent
+Target=boot

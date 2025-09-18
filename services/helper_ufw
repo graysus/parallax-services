@@ -1,0 +1,12 @@
+#!/bin/sh
+
+source /usr/lib/ufw/ufw-init-functions
+
+case $1 in
+	start)
+		ufw_start
+		;;
+	stop)
+		ufw_stop
+		;;
+esac

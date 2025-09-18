@@ -1,0 +1,4 @@
+#!/bin/sh
+
+sysctl kernel.hostname=$(cat /etc/hostname)
+exec sysctl --system

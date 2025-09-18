@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+export XDG_RUNTIME_DIR="/run/user/$UID"
+export DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/bus"
+
+case "$1" in
+	start) sendmsgu export DBUS_SESSION_BUS_ADDRESS "$DBUS_SESSION_BUS_ADDRESS" && sleep 0.01 ;;
+	run)   dbus-daemon --session --nofork --nosyslog --address "$DBUS_SESSION_BUS_ADDRESS" ;;
+esac

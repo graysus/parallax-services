@@ -1,0 +1,4 @@
+Command=/usr/bin/NetworkManager --no-daemon
+
+Depend=udevd-trigger;elogind
+Target=default

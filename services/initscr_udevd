@@ -1,0 +1,4 @@
+# Initialize udevd
+
+Command=/usr/lib/helper-udevd
+Target=boot
